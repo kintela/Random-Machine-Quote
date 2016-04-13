@@ -75,12 +75,12 @@ gulp.task('css', function() {
         .pipe(gulp.dest('./public/styles'));
 });
 
-gulp.task('index',function(){
+gulp.task('inject',function(){
     var target=gulp.src('./public/index.html');
-    var sources=gulp.src(['./public/styles/**/*.css','./public/libs/**/*.js'],{read:false});
+    var sources=gulp.src(['./public/styles/**/*.css','./public/libs/**/*.js','./public/scripts/**/*.js'],{read:false});
     
     return target.pipe(inject(sources))
-    .pipe(gulp.dest('./public'));
+    .pipe(gulp.dest('./public/'));
 });
 
 gulp.task('html',function () {
@@ -113,6 +113,6 @@ gulp.task('default',function(cb){
     'icons',
     'css',
     'html',
-    'index',
+    'inject',
     cb);
 });
