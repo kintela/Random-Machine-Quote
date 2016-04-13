@@ -1,0 +1,24 @@
+{
+  "name": "freecodecamp",
+  "authors": [
+    "kintela <kintela@innovup.cc>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "font-awesome": "*",
+    "bootstrap-sass": "bootstrap-sass-official#~3.3.6"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
