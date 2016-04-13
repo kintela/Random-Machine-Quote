@@ -26,9 +26,8 @@ gulp.task('dependencies:js',function () {
 });
 
 gulp.task('dependencies:scripts',function () {
-    return gulp.src('./scripts')
-    .pipe(mainBowerFiles(['**/*.js']))
-    .pipe(gulp.dest('./public/scripts'))
+   return gulp.src('./resources/scripts/**.js')
+        .pipe(gulp.dest('./public/scripts'));
 });
 
 gulp.task('dependencies:css',function () {
