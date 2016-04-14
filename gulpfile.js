@@ -83,6 +83,14 @@ gulp.task('inject',function(){
     .pipe(gulp.dest('./public/'));
 });
 
+//gulp.task('inject',function(){
+//    var target=gulp.src('./index.html');
+//    var sources=gulp.src(['./resources/**/*.css','./bower_components/**/*.css','./resources/**/*.js','./bower_components/**/*.js'],{read:false});
+//    
+//    return target.pipe(inject(sources))
+//    .pipe(gulp.dest('./'));
+//});
+
 gulp.task('html',function () {
     return gulp.src("index.html")
     .pipe(gulp.dest('./public'))
@@ -97,7 +105,8 @@ gulp.task('watch', function() {
 });
 
 gulp.task('clean',function () {
-    del('./public/**/*.*',[]);
+    //del('./public/**/*.*',[]);
+    del('./public/*',[]);
 });
 
 
