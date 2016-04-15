@@ -26,8 +26,8 @@ function inIframe () {
 }
 
 function getQuote(){
-  currentQuote=quotes[0,1];
-  currentAuthor=quotes[0,2];
+  currentQuote=quotes[0].quote;
+  currentAuthor=quotes[0].author;
   if(inIframe())
   {
     $('#tweet-quote').attr('href',      'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' +   encodeURIComponent('"' + currentQuote + '" ' + currentAuthor));    
@@ -42,5 +42,24 @@ function getQuote(){
           }, 500);
           $('#text').text(currentQuote);
         });
+        
+    $(".quote-author").animate({
+        opacity: 0
+    }, 500,
+    function() {
+        $(this).animate({
+        opacity: 1
+        }, 500);
+        $('#author').html(currentAuthor);
+    });
+    
+    var color = Math.floor(Math.random() * colors.length);
+      $("html body").animate({
+        backgroundColor: colors[color],
+        color: colors[color]
+      }, 1000);
+      $(".button").animate({
+        backgroundColor: colors[color]
+      }, 1000);
   
 }
